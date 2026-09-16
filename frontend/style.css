@@ -325,3 +325,28 @@ body {
     .card h3, .card p, .card li, .topbar h1, .subtitle { color: black !important; }
     .topbar { border-bottom: 2px solid black; }
 }
+
+/* --- VISTA HOME --- */
+.home-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    animation: popIn 0.5s ease forwards;
+    padding-top: 2rem;
+}
+.home-header {
+    margin-bottom: 1rem;
+}
+.home-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(90deg, var(--text-main), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+}
+.home-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
