@@ -5,18 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Memory Engine</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Tipografía moderna (Inter) -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="app-container">
         <!-- Barra Lateral -->
-        <aside class="sidebar">
+        <aside id="sidebar" class="sidebar">
             <div class="brand">
-                <div class="brand-icon">🧠</div>
-                <h2>Memory Engine</h2>
+                <div class="brand-icon">
+                    <!-- Ícono de red/nodos tipo tech -->
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"></path>
+                    </svg>
+                </div>
+                <h2 class="brand-text">Memory Engine</h2>
             </div>
-            <div class="sidebar-title">PROYECTOS ACTIVOS</div>
+            <div class="sidebar-title brand-text">PROYECTOS ACTIVOS</div>
             <ul id="project-list" class="project-list">
                 <!-- JS inyectará los proyectos acá -->
             </ul>
@@ -25,9 +29,19 @@
         <!-- Contenido Principal -->
         <main class="main-content">
             <header class="topbar">
-                <div>
-                    <h1 id="project-title">Selecciona un proyecto</h1>
-                    <p id="project-description" class="subtitle">La IA generará una bitácora automática basada en las comunicaciones del equipo.</p>
+                <div class="topbar-left">
+                    <!-- Botón para colapsar el sidebar -->
+                    <button id="toggle-sidebar" class="icon-btn" title="Ocultar/Mostrar menú">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
+                    <div>
+                        <h1 id="project-title">Selecciona un proyecto</h1>
+                        <p id="project-description" class="subtitle">La IA generará una bitácora automática basada en las comunicaciones.</p>
+                    </div>
                 </div>
                 <span id="project-status" class="badge hidden"></span>
             </header>
@@ -35,7 +49,7 @@
             <!-- Animación de carga -->
             <div id="loader" class="loader hidden">
                 <div class="spinner"></div>
-                <p>Analizando mensajes con IA...</p>
+                <p>Procesando con modelo 120b...</p>
             </div>
 
             <!-- Contenedor del Resumen (Bitácora) -->
