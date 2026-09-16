@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Memory Engine</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Tipografía moderna (Inter) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Barra Lateral -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-icon">🧠</div>
+                <h2>Memory Engine</h2>
+            </div>
+            <div class="sidebar-title">PROYECTOS ACTIVOS</div>
+            <ul id="project-list" class="project-list">
+                <!-- JS inyectará los proyectos acá -->
+            </ul>
+        </aside>
+
+        <!-- Contenido Principal -->
+        <main class="main-content">
+            <header class="topbar">
+                <div>
+                    <h1 id="project-title">Selecciona un proyecto</h1>
+                    <p id="project-description" class="subtitle">La IA generará una bitácora automática basada en las comunicaciones del equipo.</p>
+                </div>
+                <span id="project-status" class="badge hidden"></span>
+            </header>
+
+            <!-- Animación de carga -->
+            <div id="loader" class="loader hidden">
+                <div class="spinner"></div>
+                <p>Analizando mensajes con IA...</p>
+            </div>
+
+            <!-- Contenedor del Resumen (Bitácora) -->
+            <div id="summary-container" class="summary-grid hidden">
+                <!-- JS inyectará las tarjetas del resumen acá -->
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
