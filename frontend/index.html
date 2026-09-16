@@ -13,7 +13,6 @@
         <aside id="sidebar" class="sidebar">
             <div class="brand">
                 <div class="brand-icon">
-                    <!-- Ícono de red/nodos tipo tech -->
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"></path>
                     </svg>
@@ -30,7 +29,6 @@
         <main class="main-content">
             <header class="topbar">
                 <div class="topbar-left">
-                    <!-- Botón para colapsar el sidebar -->
                     <button id="toggle-sidebar" class="icon-btn" title="Ocultar/Mostrar menú">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -43,16 +41,26 @@
                         <p id="project-description" class="subtitle">La IA generará una bitácora automática basada en las comunicaciones.</p>
                     </div>
                 </div>
-                <span id="project-status" class="badge hidden"></span>
+                
+                <!-- NUEVO: Controles derecha (Salud, Estado y PDF) -->
+                <div class="topbar-right">
+                    <span id="health-indicator" class="badge hidden"></span>
+                    <span id="project-status" class="badge default-badge hidden"></span>
+                    <button id="export-btn" class="icon-btn hidden" title="Exportar Reporte a PDF">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                            <rect x="6" y="14" width="12" height="8"></rect>
+                        </svg>
+                    </button>
+                </div>
             </header>
 
-            <!-- Animación de carga -->
             <div id="loader" class="loader hidden">
                 <div class="spinner"></div>
                 <p>Procesando con modelo 120b...</p>
             </div>
 
-            <!-- Contenedor del Resumen (Bitácora) -->
             <div id="summary-container" class="summary-grid hidden">
                 <!-- JS inyectará las tarjetas del resumen acá -->
             </div>
