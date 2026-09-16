@@ -1,0 +1,144 @@
+{
+  "project_id": "autos",
+  "project_name": "AutoTrack — Sistema de Gestión de Flota y Turnos",
+  "description": "Plataforma web para que talleres mecánicos gestionen turnos de service, historial de vehículos y notificaciones automáticas a clientes. Incluye módulo de recordatorios por WhatsApp y reportes de mantenimiento.",
+  "status": "en desarrollo",
+  "team": ["Lucía (PM)", "Fede (dev backend)", "Naty (dev frontend)", "Marina (cliente - dueña del taller)"],
+  "messages": [
+    {
+      "id": 1,
+      "channel": "whatsapp",
+      "author": "Marina (cliente)",
+      "role": "cliente",
+      "date": "2026-09-01T09:12:00",
+      "type": "pregunta_cliente",
+      "content": "Holaa! ¿cómo va lo del módulo de turnos? lo necesitamos antes de fin de mes porque arrancamos temporada alta de service"
+    },
+    {
+      "id": 2,
+      "channel": "whatsapp",
+      "author": "Lucía (PM)",
+      "role": "pm",
+      "date": "2026-09-01T09:40:00",
+      "type": "avance",
+      "content": "Marina! vamos bien, el calendario de turnos ya está funcionando en el ambiente de pruebas, esta semana lo probamos con datos reales"
+    },
+    {
+      "id": 3,
+      "channel": "email",
+      "author": "Fede",
+      "role": "dev",
+      "date": "2026-09-01T14:30:00",
+      "type": "duda_tecnica",
+      "content": "Equipo, tengo una duda de diseño: el historial de service, ¿lo guardamos en la misma tabla de vehículos o hacemos una tabla aparte tipo service_history? Si un auto tiene 40 services capaz conviene separarlo para no inflar la tabla principal."
+    },
+    {
+      "id": 4,
+      "channel": "whatsapp",
+      "author": "Naty",
+      "role": "dev",
+      "date": "2026-09-01T14:45:00",
+      "type": "duda_tecnica",
+      "content": "yo separaría, además así podemos paginar el historial en el front sin cargar todo de una"
+    },
+    {
+      "id": 5,
+      "channel": "email",
+      "author": "Marina (cliente)",
+      "role": "cliente",
+      "date": "2026-09-02T10:05:00",
+      "type": "pregunta_cliente",
+      "content": "Otra cosa, ¿el sistema va a poder mandar un WhatsApp automático recordando el turno un día antes? Eso nos ahorraría un montón de llamadas"
+    },
+    {
+      "id": 6,
+      "channel": "whatsapp",
+      "author": "Lucía (PM)",
+      "role": "pm",
+      "date": "2026-09-02T11:20:00",
+      "type": "backlog",
+      "content": "sí Marina, ya está anotado en el backlog como 'Recordatorio automático 24hs antes del turno', lo metemos en el sprint que viene"
+    },
+    {
+      "id": 7,
+      "channel": "whatsapp",
+      "author": "Fede",
+      "role": "dev",
+      "date": "2026-09-03T16:10:00",
+      "type": "bloqueo",
+      "content": "che, estoy trabado con la integración de la API de WhatsApp Business, el proveedor pide verificación de la empresa y puede tardar unos días. Alguien tiene el CUIT y los papeles a mano?"
+    },
+    {
+      "id": 8,
+      "channel": "email",
+      "author": "Lucía (PM)",
+      "role": "pm",
+      "date": "2026-09-03T17:00:00",
+      "type": "bloqueo",
+      "content": "Fede, le pido los papeles a Marina hoy mismo. Mientras tanto seguimos con el resto de las tareas del sprint para no perder tiempo."
+    },
+    {
+      "id": 9,
+      "channel": "whatsapp",
+      "author": "Marina (cliente)",
+      "role": "cliente",
+      "date": "2026-09-04T08:55:00",
+      "type": "pregunta_cliente",
+      "content": "les paso el CUIT y el comprobante de inscripción por mail ahora. Otra duda: los mecánicos van a poder marcar desde el celu cuando terminan un service? o eso queda para más adelante"
+    },
+    {
+      "id": 10,
+      "channel": "whatsapp",
+      "author": "Naty",
+      "role": "dev",
+      "date": "2026-09-04T09:30:00",
+      "type": "avance",
+      "content": "eso ya está en el diseño, va a ser una vista simple mobile-first para que el mecánico marque 'en curso' / 'terminado' desde el taller"
+    },
+    {
+      "id": 11,
+      "channel": "email",
+      "author": "Fede",
+      "role": "dev",
+      "date": "2026-09-05T13:15:00",
+      "type": "duda_tecnica",
+      "content": "Otra consulta para el equipo: cuando un cliente tiene más de un vehículo, ¿mostramos todos los autos bajo un mismo perfil de cliente o cada auto es independiente con su propio contacto? Impacta en cómo armo la base."
+    },
+    {
+      "id": 12,
+      "channel": "whatsapp",
+      "author": "Lucía (PM)",
+      "role": "pm",
+      "date": "2026-09-05T13:40:00",
+      "type": "backlog",
+      "content": "un cliente puede tener varios autos, así que un perfil de cliente con N vehículos asociados. Lo agrego al backlog como definición cerrada para que no se vuelva a discutir"
+    },
+    {
+      "id": 13,
+      "channel": "whatsapp",
+      "author": "Marina (cliente)",
+      "role": "cliente",
+      "date": "2026-09-08T18:20:00",
+      "type": "pregunta_cliente",
+      "content": "cómo venimos con el tema de la verificación de WhatsApp Business? Ya les mandé los papeles la semana pasada"
+    },
+    {
+      "id": 14,
+      "channel": "email",
+      "author": "Fede",
+      "role": "dev",
+      "date": "2026-09-08T19:05:00",
+      "type": "avance",
+      "content": "Marina, la verificación quedó aprobada ayer. Ya integré el envío de mensajes de prueba, esta semana hacemos pruebas con turnos reales para validar los recordatorios automáticos."
+    },
+    {
+      "id": 15,
+      "channel": "whatsapp",
+      "author": "Lucía (PM)",
+      "role": "pm",
+      "date": "2026-09-09T10:00:00",
+      "type": "avance",
+      "content": "resumen rápido del sprint: calendario de turnos ✅, historial de service en tabla separada ✅, perfil de cliente con múltiples vehículos ✅, recordatorio WhatsApp en pruebas 🔄"
+    }
+  ]
+}

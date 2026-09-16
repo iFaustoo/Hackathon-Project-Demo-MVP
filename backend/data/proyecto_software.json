@@ -1,0 +1,153 @@
+{
+  "project_id": "software",
+  "project_name": "DevPortal — Portal Interno de Gestión de Tickets",
+  "description": "Sistema interno para que el equipo de IT de una empresa gestione tickets de soporte, priorice incidentes y automatice la asignación de tareas entre los distintos equipos técnicos.",
+  "status": "en desarrollo",
+  "team": ["Sol (PM)", "Iván (dev backend)", "Priscila (dev frontend / QA)", "Gonzalo (cliente - gerente de IT)"],
+  "messages": [
+    {
+      "id": 1,
+      "channel": "email",
+      "author": "Gonzalo (cliente)",
+      "role": "cliente",
+      "date": "2026-08-15T09:00:00",
+      "type": "pregunta_cliente",
+      "content": "Buen día equipo, ¿cómo va el desarrollo del módulo de asignación automática de tickets? Es lo que más nos urge para descomprimir al equipo de soporte nivel 1"
+    },
+    {
+      "id": 2,
+      "channel": "whatsapp",
+      "author": "Sol (PM)",
+      "role": "pm",
+      "date": "2026-08-15T09:30:00",
+      "type": "avance",
+      "content": "Gonzalo, la asignación automática por categoría de ticket ya está funcionando en el ambiente de staging, esta semana la probamos con el equipo de soporte real"
+    },
+    {
+      "id": 3,
+      "channel": "whatsapp",
+      "author": "Iván",
+      "role": "dev",
+      "date": "2026-08-15T14:20:00",
+      "type": "duda_tecnica",
+      "content": "equipo, tengo una duda de arquitectura: para la cola de tickets, ¿usamos un job programado que corre cada 1 minuto o directamente un sistema de eventos (tipo webhook) que asigna en el momento que se crea el ticket?"
+    },
+    {
+      "id": 4,
+      "channel": "email",
+      "author": "Priscila",
+      "role": "dev",
+      "date": "2026-08-15T14:50:00",
+      "type": "duda_tecnica",
+      "content": "yo iría por eventos, así el ticket se asigna al instante y no dependemos de esperar el próximo ciclo del job. Además es más fácil de testear"
+    },
+    {
+      "id": 5,
+      "channel": "whatsapp",
+      "author": "Sol (PM)",
+      "role": "pm",
+      "date": "2026-08-15T15:10:00",
+      "type": "backlog",
+      "content": "de acuerdo con Priscila, cerramos: arquitectura basada en eventos para la asignación automática. Lo dejo documentado en el backlog como decisión técnica"
+    },
+    {
+      "id": 6,
+      "channel": "whatsapp",
+      "author": "Gonzalo (cliente)",
+      "role": "cliente",
+      "date": "2026-08-18T10:05:00",
+      "type": "pregunta_cliente",
+      "content": "otra duda que me pasaron de RRHH: ¿el sistema va a poder medir el tiempo promedio de resolución por técnico? lo necesitamos para las evaluaciones de desempeño"
+    },
+    {
+      "id": 7,
+      "channel": "email",
+      "author": "Sol (PM)",
+      "role": "pm",
+      "date": "2026-08-18T11:00:00",
+      "type": "backlog",
+      "content": "sí Gonzalo, lo agrego al backlog como 'Reporte de tiempo promedio de resolución por técnico y por categoría', lo metemos para el sprint 4"
+    },
+    {
+      "id": 8,
+      "channel": "whatsapp",
+      "author": "Iván",
+      "role": "dev",
+      "date": "2026-08-20T16:40:00",
+      "type": "bloqueo",
+      "content": "che, estoy trabado con el sistema de eventos, tenemos un problema de mensajes duplicados cuando el broker reintenta la entrega. Necesito implementar idempotencia antes de seguir"
+    },
+    {
+      "id": 9,
+      "channel": "email",
+      "author": "Priscila",
+      "role": "dev",
+      "date": "2026-08-20T17:10:00",
+      "type": "bloqueo",
+      "content": "Iván, yo tuve un caso parecido en otro proyecto, usé una clave idempotente por ticket_id + evento. Te paso el snippet por Slack para que no arranques de cero"
+    },
+    {
+      "id": 10,
+      "channel": "whatsapp",
+      "author": "Sol (PM)",
+      "role": "pm",
+      "date": "2026-08-21T09:15:00",
+      "type": "avance",
+      "content": "update: el problema de duplicados quedó resuelto con la solución de idempotencia que propuso Priscila. Seguimos en fecha para el sprint 3"
+    },
+    {
+      "id": 11,
+      "channel": "whatsapp",
+      "author": "Gonzalo (cliente)",
+      "role": "cliente",
+      "date": "2026-08-25T08:50:00",
+      "type": "pregunta_cliente",
+      "content": "una consulta de seguridad: ¿los tickets van a tener permisos por área? no quiero que soporte de RRHH vea tickets de infraestructura y viceversa"
+    },
+    {
+      "id": 12,
+      "channel": "email",
+      "author": "Iván",
+      "role": "dev",
+      "date": "2026-08-25T10:30:00",
+      "type": "avance",
+      "content": "Gonzalo, sí, ya está contemplado un sistema de roles y permisos por área/equipo. Cada técnico solo va a ver los tickets de las categorías asignadas a su equipo, salvo los administradores que ven todo"
+    },
+    {
+      "id": 13,
+      "channel": "whatsapp",
+      "author": "Priscila",
+      "role": "dev",
+      "date": "2026-08-28T13:00:00",
+      "type": "duda_tecnica",
+      "content": "pregunta para el equipo: cuando un ticket se escala de nivel 1 a nivel 2, ¿se mantiene el mismo ID de ticket o se crea uno nuevo enlazado al original? impacta en cómo armo el historial en el front"
+    },
+    {
+      "id": 14,
+      "channel": "whatsapp",
+      "author": "Sol (PM)",
+      "role": "pm",
+      "date": "2026-08-28T13:20:00",
+      "type": "backlog",
+      "content": "se mantiene el mismo ID, solo cambia el campo 'nivel_escalado' y se guarda el historial de cambios de nivel. Lo cierro como definición en el backlog"
+    },
+    {
+      "id": 15,
+      "channel": "email",
+      "author": "Gonzalo (cliente)",
+      "role": "cliente",
+      "date": "2026-09-05T09:20:00",
+      "type": "pregunta_cliente",
+      "content": "¿cómo venimos con todo de cara a la presentación del mes que viene? necesito saber qué puedo mostrarle ya a mi jefe"
+    },
+    {
+      "id": 16,
+      "channel": "whatsapp",
+      "author": "Sol (PM)",
+      "role": "pm",
+      "date": "2026-09-05T10:00:00",
+      "type": "avance",
+      "content": "Gonzalo, resumen de estado: asignación automática por eventos ✅, permisos por área ✅, escalado de tickets con historial ✅, reporte de tiempos promedio 🔄 (en desarrollo, listo para el sprint 4)"
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "project_id": "agro",
+  "project_name": "AgroSense — Monitoreo de Cultivos y Riego Inteligente",
+  "description": "Sistema de sensores IoT + dashboard web para monitorear humedad de suelo, temperatura y estado de cultivos en tiempo real, con alertas automáticas y control remoto del riego para productores agropecuarios.",
+  "status": "en desarrollo",
+  "team": ["Ramiro (PM)", "Carla (dev backend/IoT)", "Tomás (dev frontend)", "Don Osvaldo (cliente - productor)"],
+  "messages": [
+    {
+      "id": 1,
+      "channel": "whatsapp",
+      "author": "Don Osvaldo (cliente)",
+      "role": "cliente",
+      "date": "2026-08-20T07:30:00",
+      "type": "pregunta_cliente",
+      "content": "Buenas! ¿los sensores de humedad ya se pueden instalar en el campo o todavía están en pruebas de laboratorio?"
+    },
+    {
+      "id": 2,
+      "channel": "whatsapp",
+      "author": "Ramiro (PM)",
+      "role": "pm",
+      "date": "2026-08-20T08:15:00",
+      "type": "avance",
+      "content": "Don Osvaldo, los sensores ya pasaron las pruebas de laboratorio. Esta semana instalamos los primeros 5 en el lote norte para hacer la prueba piloto"
+    },
+    {
+      "id": 3,
+      "channel": "email",
+      "author": "Carla",
+      "role": "dev",
+      "date": "2026-08-20T15:00:00",
+      "type": "duda_tecnica",
+      "content": "Equipo, necesito definir: los sensores van a mandar datos cada 15 min por LoRa, pero si no hay señal, ¿guardamos localmente y reenviamos después, o directamente descartamos la lectura? El campo tiene zonas con mala cobertura."
+    },
+    {
+      "id": 4,
+      "channel": "whatsapp",
+      "author": "Tomás",
+      "role": "dev",
+      "date": "2026-08-20T15:20:00",
+      "type": "duda_tecnica",
+      "content": "yo guardaría localmente en el sensor y reenviaría en batch cuando vuelva la señal, si no perdemos data valiosa de zonas con mala cobertura"
+    },
+    {
+      "id": 5,
+      "channel": "whatsapp",
+      "author": "Ramiro (PM)",
+      "role": "pm",
+      "date": "2026-08-20T15:35:00",
+      "type": "backlog",
+      "content": "de acuerdo, lo anoto en el backlog como 'Buffer local + reenvío en batch para zonas sin cobertura LoRa', prioridad alta"
+    },
+    {
+      "id": 6,
+      "channel": "email",
+      "author": "Don Osvaldo (cliente)",
+      "role": "cliente",
+      "date": "2026-08-22T09:10:00",
+      "type": "pregunta_cliente",
+      "content": "otra pregunta que me surgió: ¿el sistema me va a avisar si un sensor se queda sin batería o se rompe? el año pasado perdimos una semana de riego por una falla que no vimos a tiempo"
+    },
+    {
+      "id": 7,
+      "channel": "whatsapp",
+      "author": "Carla",
+      "role": "dev",
+      "date": "2026-08-22T10:00:00",
+      "type": "avance",
+      "content": "sí Don Osvaldo, ya está contemplado: cada sensor reporta su nivel de batería y si deja de mandar datos por más de 2 horas, el sistema dispara una alerta automática por WhatsApp y mail"
+    },
+    {
+      "id": 8,
+      "channel": "whatsapp",
+      "author": "Tomás",
+      "role": "dev",
+      "date": "2026-08-25T11:45:00",
+      "type": "bloqueo",
+      "content": "estoy trabado con el mapa del dashboard, la librería de mapas que elegimos no soporta bien la superposición de las zonas de riego con el estado de humedad en tiempo real. Voy a probar otra librería"
+    },
+    {
+      "id": 9,
+      "channel": "email",
+      "author": "Ramiro (PM)",
+      "role": "pm",
+      "date": "2026-08-25T12:30:00",
+      "type": "bloqueo",
+      "content": "Tomás, dale para adelante con el cambio de librería, avisame si eso corre riesgo la fecha del piloto del lote norte"
+    },
+    {
+      "id": 10,
+      "channel": "whatsapp",
+      "author": "Don Osvaldo (cliente)",
+      "role": "cliente",
+      "date": "2026-08-28T18:00:00",
+      "type": "pregunta_cliente",
+      "content": "che, y el riego automático, ¿lo puedo activar y desactivar yo desde el celular o siempre lo tiene que hacer alguien del equipo técnico?"
+    },
+    {
+      "id": 11,
+      "channel": "whatsapp",
+      "author": "Ramiro (PM)",
+      "role": "pm",
+      "date": "2026-08-28T18:20:00",
+      "type": "avance",
+      "content": "va a ser 100% self-service, desde el dashboard vas a poder prender/apagar el riego por zona, y también programarlo por horario"
+    },
+    {
+      "id": 12,
+      "channel": "email",
+      "author": "Carla",
+      "role": "dev",
+      "date": "2026-08-30T14:00:00",
+      "type": "duda_tecnica",
+      "content": "consulta al equipo: si el productor programa el riego pero justo llovió esa noche, ¿el sistema cancela el riego automáticamente si detecta humedad alta, o eso queda a criterio del cliente?"
+    },
+    {
+      "id": 13,
+      "channel": "whatsapp",
+      "author": "Ramiro (PM)",
+      "role": "pm",
+      "date": "2026-08-30T14:25:00",
+      "type": "backlog",
+      "content": "buena esa, lo agrego al backlog: 'Modo inteligente: suspender riego programado si humedad de suelo supera umbral configurado'. Se lo consultamos a Don Osvaldo para confirmar el umbral que usa habitualmente"
+    },
+    {
+      "id": 14,
+      "channel": "whatsapp",
+      "author": "Don Osvaldo (cliente)",
+      "role": "cliente",
+      "date": "2026-09-02T08:40:00",
+      "type": "pregunta_cliente",
+      "content": "todo lindo lo del riego inteligente! y lo del mapa con las zonas, ¿cómo va? me habían dicho que estaban con un problema"
+    },
+    {
+      "id": 15,
+      "channel": "email",
+      "author": "Tomás",
+      "role": "dev",
+      "date": "2026-09-02T10:15:00",
+      "type": "avance",
+      "content": "Don Osvaldo, ya resolvimos el tema del mapa cambiando de librería. El dashboard ya muestra las zonas de riego con el color según nivel de humedad en tiempo real, esta semana lo probamos en el piloto del lote norte"
+    }
+  ]
+}

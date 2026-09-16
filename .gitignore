@@ -1,0 +1,11 @@
+# Ocultar variables de entorno (¡MUY IMPORTANTE!)
+.env
+
+# Entornos virtuales de Python
+.venv/
+venv/
+env/
+
+# Caché de Python
+__pycache__/
+*.pyc
